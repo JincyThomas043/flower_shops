@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+<title>contacts</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Your description">
+<meta name="keywords" content="Your keywords">
+<meta name="author" content="Your name">
+<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" media="screen">
+<link rel="stylesheet" href="{% static 'css/bootstrap-responsive.css' %}" type="text/css" media="screen">
+<link rel="stylesheet" href="{% static 'css/newstyle.css' %}" type="text/css" media="screen">
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/superfish.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/jquery.ui.totop.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/cform.js' %}"></script>
+<script>
+$(document).ready(function() {
+	//
+
+}); //
+$(window).load(function() {
+	//
+
+}); //
+</script>
+<!--[if lt IE 8]>
+		<div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
+	<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <link rel="stylesheet" href="{% static 'css/ie.css' %}" type="text/css" media="screen">
+<![endif]-->
+</head>
+
+<body class="subpage">
+<div id="main">
+
+<div class="top1">
+<div class="container">
+<div class="row">
+<div class="span12">
+<div class="top1_inner">
+
+<header><div class="logo_wrapper"><a href="index.html" class="logo"><img src="{% static 'images/logo.png' %}" alt=""></a></div></header>
+
+<!--<div class="search-form-wrapper clearfix">-->
+<!--<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >-->
+<!--	<input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">-->
+<!--	<a href="#" onClick="document.getElementById('search-form').submit()"></a>-->
+<!--</form>-->
+<!--</div>-->
+    {% if messages %}
+    <div class="container">
+        <div class="alert alert-success alert-dismissble messages">
+            {% for message in messages %}
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            {{message}}
+            </div>
+        		{% endfor %}
+        </div>
+    			{% endif %}
+    </div>
+
+<div class="menu_wrapper">
+<div class="arr_left"></div>
+<div class="arr_right"></div>
+<div class="navbar navbar_">
+	<div class="navbar-inner navbar-inner_">
+		<a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</a>
+		<div class="nav-collapse nav-collapse_ collapse">
+			<ul class="nav sf-menu clearfix">
+<!--<li><a href="index">home page</a></li>-->
+<!--<li class="sub-menu sub-menu-1"><a href="ind">about us</a>-->
+	<ul>
+<!--		<li><a href="in">who we are</a></li>-->
+<!--		<li><a href="shop">Shops</a></li>-->
+<!--		<li><a href="price">Prices</a></li>-->
+
+	</ul>
+</li>
+<!--<li><a href="service">services</a></li>-->
+<!--<li><a href="gallery">gallery</a></li>-->
+<!--<li><a href="price">prices</a></li>-->
+		<li> <a href="adminpage">home</a></li>
+		<li> <a href="viewuser">VIEW USER</a></li>
+
+			<li class="active"><a href='updateproduct/<int:d>'>UPDATE</a></li>
+
+			<li> <a href="displayproduct">DISPLAY PRODUCT</a></li>
+				<li><a href="logout">Logout</a></li>
+    </ul>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="breadcrumbs1">
+<div class="breadcrumbs1_inner"></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--<div id="content">-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="span12">-->
+<!--<div id="content_inner">-->
+
+<!--<div class="row">-->
+<!--<div class="span9">-->
+<!--<div class="vl1">-->
+
+<!--<div class="pad_right20">-->
+
+
+
+
+<!--<form action="" method="post"></form>-->
+<!--	{% csrf_token %}-->
+<!--		<div class="row">-->
+<!--			<div class="span3">-->
+<!--				<div class="control-group">-->
+<!--				    <label class="control-label" for="inputName">Your full name:</label>-->
+<!--				    <div class="controls">-->
+<!--				      <input class="span3" type="text" id="inputName" name="username" value="Your full name:" onBlur="if(this.value=='') this.value='Your full name:'" onFocus="if(this.value =='Your full name:' ) this.value=''">-->
+<!--				    </div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="span3">-->
+<!--				<div class="control-group">-->
+<!--				    <label class="control-label" for="inputEmail">Your email:</label>-->
+<!--				    <div class="controls">-->
+<!--				      <input class="span3" type="text" id="inputEmail" name="email" value="Your email:" onBlur="if(this.value=='') this.value='Your email:'" onFocus="if(this.value =='Your email:' ) this.value=''">-->
+<!--				    </div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="span3">-->
+<!--				<div class="control-group">-->
+<!--				    <label class="control-label" for="inputPhone">Phone number:</label>-->
+<!--				    <div class="controls">-->
+<!--				      <input class="span3" type="text" id="inputPhone" name="phoneno" value="Phone number:" onBlur="if(this.value=='') this.value='Phone number:'" onFocus="if(this.value =='Phone number:' ) this.value=''">-->
+<!--				    </div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--						<div class="span3">-->
+<!--				<div class="control-group">-->
+<!--				    <label class="control-label" for="inputPassword">Password:</label>-->
+<!--				    <div class="controls">-->
+<!--				      <input class="span3" type="text" id="inputPassword" name="password" value="Password:" onBlur="if(this.value=='') this.value='Password:'" onFocus="if(this.value =='Password:' ) this.value=''">-->
+<!--				    </div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div style="margin-top:200px;">-->
+<!--			<button class="aa-browse-btn" type="submit">Register</button>-->
+<!--<div
+			</div>-->
+<div align="center">
+	<h1><b>UPDATE DETALS</b></h1>
+</div>
+    {% if messages %}
+    <div class="container">
+        <div class="alert alert-success alert-dismissble messages">
+            {% for message in messages %}
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            {{message}}
+            </div>
+        		{% endfor %}
+        </div>
+    			{% endif %}
+    </div>
+
+	<div style="margin-left:620px;margin-top:50px;">
+		<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+<!--		<label>Name</label>-->
+<!--		<input type="text" id="flowername" name="n1" value="{{data1.product_name}}" placeholder="Enter flowername">-->
+<!--		<label>Price</label>-->
+<!--		<input type="text" id="Flowerprice" name="n2" value="{{data1.product_price}}" placeholder="Enter flowerprice">-->
+<!--		<label>description</label>-->
+<!--		<input type="text" id="description" name="n5" value="{{data1.description}}"  placeholder="Enter description">-->
+<!--				<label>stock</label>-->
+<!--		<input type="text" id="Flowerstock" name="n3"  value="{{data1.product_stock}}"  placeholder="Enter flowerstock"><br><br>-->
+<!--			<select name="category" id="category" name="category">-->
+<!--				<option>BOQUE</option>-->
+<!--				<option>ROSE</option>-->
+<!--				<option>Pot Flowers</option>-->
+<!--				<opibjkjkjbjkntion>VALENTINE</opibjkjkjbjkntion>-->
+<!--				<option>STAGES</option>-->
+<!--				<option>GIFTS</option>-->
+<!--			</select><br><br>-->
+<!--		<label>Image</label><br><br>-->
+<!--		<input type="file" id="file" name="n4" placeholder="Enter your productimage">-->
+<!--         <div style="margin-top:10px;margin-left:80px;">-->
+			{{data2}}
+		<button type="submit">UPDATE</button>
+        </div>
+
+	</form>
+</div>
+
+
+<!--<div class="span3">-->
+
+<!--<h2>Services</h2>-->
+
+<!--<ul class="ul1">-->
+<!--  <li><a href="#">Quisque nullatibulum libero</a></li>-->
+<!--  <li><a href="#">Scelerisque eget, malesuada at</a></li>-->
+<!--  <li><a href="#">Vivamus eget niiam cursus leo</a></li>-->
+<!--  <li><a href="#">Nulla facilisinean nec eros</a></li>-->
+<!--  <li><a href="#">Vestibulum ante ipsum</a></li>-->
+<!--  <li><a href="#">Quisque nullatibulum libero</a></li>-->
+<!--  <li><a href="#">Scelerisque eget, malesuada at</a></li>-->
+<!--  <li><a href="#">Vivamus eget niiam cursus leo</a></li>-->
+<!--  <li><a href="#">Nulla facilisinean nec eros</a></li>-->
+<!--  <li><a href="#">Vestibulum ante ipsum</a></li>-->
+<!--</ul>-->
+
+
+
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="line1"></div>-->
+
+<!--<div class="row">-->
+<!--<div class="span9">-->
+
+<!--<h2>Contact Form</h2>-->
+
+<!--<div id="note"></div>-->
+<!--<div id="fields">-->
+
+<!--				Lorem ipsum dolor sit amet consectetuer adipi scing elraesent ves tibm moeacus.-->
+<!--Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturientdiculus mus. Nulla dui. -->
+<!--			</p>-->
+<!--			<div class="line2"></div>-->
+<!--&lt;!&ndash;			<div class="text-right"><a href="#" class="button2">read more</a></div>&ndash;&gt;-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+
+
+<!--</div>-->
+<!--</div>-->
+
+
+
+
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="bot1">-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="span12">-->
+<!--<div class="bot1_inner">-->
+<!--<div class="row">-->
+<!--<div class="span3">-->
+<!--	<div class="bot1_title">About Us</div>-->
+<!--	<ul class="ul0">-->
+<!--	  <li><a href="#">Quisque nullatibulum libero</a></li>-->
+<!--	  <li><a href="#">Scelerisque eget, malesuada at</a></li>-->
+<!--	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>-->
+<!--	  <li><a href="#">Nulla facilisinean nec eros</a></li>-->
+<!--	  <li><a href="#">Vestibulum ante ipsum</a></li>-->
+<!--	</ul>-->
+<!--</div>-->
+<!--<div class="span3">-->
+<!--	<div class="bot1_title">Design Ideas</div>-->
+<!--	<ul class="ul0">-->
+<!--	  <li><a href="#">Nam elit magna, hendrerit</a></li>-->
+<!--	  <li><a href="#">Quisque nullatibulum libero</a></li>-->
+<!--	  <li><a href="#">Scelerisque eget, malesuada at</a></li>-->
+<!--	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>-->
+<!--	  <li><a href="#">Nulla facilisinean nec eros</a></li>-->
+<!--	</ul>-->
+<!--</div>-->
+<!--<div class="span3">-->
+<!--	<div class="bot1_title">Links</div>-->
+<!--	<ul class="ul0">-->
+<!--	  <li><a href="#">Nulla facilisinean nec eros</a></li>-->
+<!--	  <li><a href="#">Vestibulum ante ipsum</a></li>-->
+<!--	  <li><a href="#">Primis in faucib</a></li>-->
+<!--	  <li><a href="#">Orci luctus et ultrices posuere</a></li>-->
+<!--	  <li><a href="#">Suspendisse sollicitudin</a></li>-->
+<!--	</ul>-->
+<!--</div>-->
+<!--<div class="span3">-->
+<!--	<div class="bot1_title">Copyright</div>-->
+<!--	<footer><div class="copyright">Copyright GRIDGUM © 2018. All rights reserved.</div></footer>-->
+<!--	<div class="social_wrapper">-->
+<!--		<ul class="social clearfix">-->
+<!--		    <li><a href="#"><img src="{% static 'images/social_ic1.png' %}"></a></li>-->
+<!--		    <li><a href="#"><img src="{% static 'images/social_ic2.png' %}"></a></li>-->
+<!--		    <li><a href="#"><img src="{% static 'images/social_ic3.png' %}"></a></li>-->
+<!--		</ul>-->
+<!--	</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+</div>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
